@@ -1,5 +1,5 @@
 ---
-title: 'part1'
+title: 'part1 기초 확립'
 nav_order: 2
 ---
 
