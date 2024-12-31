@@ -13,6 +13,7 @@
     height: 100%;
     border-right: $border $border-color;
     align-items: flex-end;
+    padding-top: 10px;
   }
 
   @include mq(lg) {
