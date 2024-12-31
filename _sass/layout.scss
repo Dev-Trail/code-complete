@@ -115,7 +115,7 @@
 
 .site-header {
   display: flex;
-  min-height: calc($header-height + 10px);
+  min-height: $header-height;
   align-items: center;
 
   @include mq(md) {
@@ -151,7 +151,7 @@
     background-image: url($logo);
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: contain;
+    background-size: cover;
   }
 }
 
