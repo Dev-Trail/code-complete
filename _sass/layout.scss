@@ -1,6 +1,4 @@
-//
 // The basic two column layout
-//
 
 .side-bar {
   z-index: 0;
@@ -9,11 +7,10 @@
   background-color: $sidebar-color;
 
   @include mq(md) {
-    flex-wrap: nowrap;
+    flex-flow: column nowrap;
     position: fixed;
     width: $nav-width-md;
     height: 100%;
-    flex-direction: column;
     border-right: $border $border-color;
     align-items: flex-end;
   }
@@ -22,43 +19,56 @@
     width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
     min-width: $nav-width;
   }
-}
 
-.side-theme {
-  display:flex;
-  justify-content: space-between;
-  width: 100%;
-  
-  @include mq(md) {
-    width: $nav-width-md;
-    justify-content: flex-end;
+  & + .main {
+    @include mq(md) {
+      margin-left: $nav-width-md;
+    }
+
+    @include mq(lg) {
+      // stylelint-disable function-name-case
+      // disable for Max(), we want to use the CSS max() function
+      margin-left: Max(
+        #{$nav-width},
+        calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
+      );
+      // stylelint-enable function-name-case
+    }
+
+    .main-header {
+      display: none;
+      background-color: $sidebar-color;
+
+      @include mq(md) {
+        display: flex;
+        background-color: $body-background-color;
+      }
+
+      &.nav-open {
+        display: block;
+
+        @include mq(md) {
+          display: flex;
+        }
+      }
+    }
   }
-
-  @include mq(lg) {
-    width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
-    min-width: $nav-width;
-  }
 }
-
 
 .main {
+  margin: auto;
+
   @include mq(md) {
     position: relative;
     max-width: $content-width;
-    margin-left: $nav-width-md;
-  }
-
-  @include mq(lg) {
-    margin-left: calc(
-      (100% - #{$nav-width + $content-width}) / 2 + #{$nav-width}
-    );
   }
 }
 
 .main-content-wrap {
-  @include container;
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
+
+  @include container;
 
   @include mq(md) {
     padding-top: $gutter-spacing;
@@ -68,23 +78,12 @@
 
 .main-header {
   z-index: 0;
-  display: none;
-  background-color: $sidebar-color;
+  border-bottom: $border $border-color;
 
   @include mq(md) {
     display: flex;
     justify-content: space-between;
     height: $header-height;
-    background-color: $body-background-color;
-    border-bottom: $border $border-color;
-  }
-
-  &.nav-open {
-    display: block;
-
-    @include mq(md) {
-      display: flex;
-    }
   }
 }
 
@@ -107,7 +106,7 @@
 
   @include mq(md) {
     display: block;
-//    padding-top: $sp-8;
+    padding-top: $sp-8;
     padding-bottom: $gutter-spacing-sm;
     overflow-y: auto;
     flex: 1 1 auto;
@@ -118,7 +117,6 @@
   display: flex;
   min-height: $header-height;
   align-items: center;
-  transition: all 0.2s linear;
 
   @include mq(md) {
     height: $header-height;
@@ -127,21 +125,7 @@
   }
 }
 
-.site-header:hover {
-  display: flex;
-  min-height: $header-height*1.2;
-  align-items: center;
-  transition: all 0.2s;
-
-  @include mq(md) {
-    height: $header-height*1.2;
-    max-height: $header-height*1.2;
-    border-bottom: $border $border-color;
-  }
-}
-
 .site-title {
-  @include container;
   flex-grow: 1;
   display: flex;
   height: 100%;
@@ -149,6 +133,9 @@
   padding-top: $sp-3;
   padding-bottom: $sp-3;
   color: $body-heading-color;
+
+  @include container;
+
   @include fs-6;
 
   @include mq(md) {
@@ -163,17 +150,13 @@
     height: 200%;
     background-image: url($logo);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: left center;
     background-size: contain;
-    transition: all 0.2s linear;
-    margin-top: 10px;
-    margin-bottom: 5;
   }
 }
 
 .site-button {
   display: flex;
-  font-size: 14px;
   height: 100%;
   padding: $gutter-spacing-sm;
   align-items: center;
@@ -187,11 +170,18 @@
 
 .site-title:hover {
   background-image: linear-gradient(
-    90deg,
-    rgba($feedback-color, 0) 0%,
-    rgba($feedback-color, 0) 90%,
-    rgba($feedback-color, 0.6) 95%,
-    rgba($feedback-color, 1) 100%
+    -90deg,
+    rgba($feedback-color, 1) 0%,
+    rgba($feedback-color, 0.8) 80%,
+    rgba($feedback-color, 0) 100%
+  );
+}
+
+.site-button:hover {
+  background-image: linear-gradient(
+    -90deg,
+    rgba($feedback-color, 1) 0%,
+    rgba($feedback-color, 0.8) 100%
   );
 }
 
@@ -211,13 +201,15 @@ body {
 // stylelint-enable selector-max-type
 
 .site-footer {
-  @include container;
   position: absolute;
   bottom: 0;
   left: 0;
   padding-top: $sp-4;
   padding-bottom: $sp-4;
   color: $grey-dk-000;
+
+  @include container;
+
   @include fs-2;
 
   @include mq(md) {
