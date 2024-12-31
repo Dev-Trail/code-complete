@@ -7,6 +7,9 @@ writer: sulogc
 
 # 5장 - 구현 설계
 
+{% include writer.html writer=page.writer %}
+
+
 ## 5-1. 설계의 어려움
 
 ## 5-2. 핵심 설계 개념
