@@ -59,9 +59,7 @@ writer: sulogc
 
 하나의 시스템에 여러 상세 수준이 있고, 각 상세 수준마다 설계가 필요하다. 
 
-<img src="{{ site.figure | absolute_url }}5.1.png" width="650px"/>
-<img src="/assets/figures/5.1.png" width="650px"/>
-<img src="/code-complete/assets/figures/5.1.png" width="650px"/>
+<img src="/code-complete/assets/figures/5.1.png" width="400px"/>
 
 
 - 수준1. 소프트웨어 시스템
@@ -70,6 +68,10 @@ writer: sulogc
 
 어떻게 서브시스템으로 나눌지, 각 서브시스템이 다른 서브시스템을 어떻게 사용하게 할 것인지를 정해야한다. 
 서브시스템간의 커뮤니케이션을 제한하고 완화해나가며 순환을 방지해야한다. 
+
+<img src="/code-complete/assets/figures/5.2.png" width="200px"/>
+<img src="/code-complete/assets/figures/5.3.png" width="200px"/>
+
 
 - 수준3. 클래스로 분할
 시스템에 필요한 모든 클래스를 구체화 하는 작업으로, 개별적인 클래스로 구현할 수 있을 만큼 자세하게 서브시스템을 분해해야한다. 
@@ -88,6 +90,7 @@ writer: sulogc
 결정적인 프로그램 동작과 달리 소프트웨어 설계는 발견적 학습을 적용해야한다. 
 
 ### a. 현실 세계의 객체를 찾아라
+<img src="/code-complete/assets/figures/5.4.png" width="400px"/>
 
 설계의 대안을 규명하는 가장 정석적인 방법은 객체지향적 접근 방법으로, 현실 세계의 객체와 가상의 객체를 찾는 것이다. 
 - 객체와 객체의 속성을 식별 
@@ -130,6 +133,8 @@ Open()이나 Close()는 문에 종류에 상관없이 연산을 지원하는데 
 - 전역 연산을 루틴화, 사용자 정의 타입 사용, 상수 대신 이름 상수 사용 등의 예시. 
 - 정보 은닉의 장애물 : 정보의 지나친 배분, 순환 의존성, 전역 데이터로 오해받는 클래스 데이터, 성능 손해
 - 정보 은닉에 대한 발견적 사고는 객체지향적인 사고가 하지 않는 설계 결정을 돕는다. 
+<img src="/code-complete/assets/figures/5.5.png" width="400px"/>
+
 
 ### f. 변경될 것 같은 영역을 찾아라 
 
@@ -154,7 +159,7 @@ Open()이나 Close()는 문에 종류에 상관없이 연산을 지원하는데 
 - 패턴은 대안을 제안하여 발견적 학습의 가치를 제공한다. 
 - 패턴은 설계에 대해 수준 높은 논의를 할 수 있게한다. 
 
-{png2}
+<img src="/code-complete/assets/figures/5.6.png" width="400px"/>
 
 ### i. 다른 발견적 학습 
 
