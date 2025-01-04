@@ -60,6 +60,8 @@ writer: sulogc
 하나의 시스템에 여러 상세 수준이 있고, 각 상세 수준마다 설계가 필요하다. 
 
 <img src="{{ site.figure | absolute_url }}5.1.png" width="650px"/>
+<img src="/assets/figures/5.1.png" width="650px"/>
+<img src="/code-complete/assets/figures/5.1.png" width="650px"/>
 
 
 - 수준1. 소프트웨어 시스템
