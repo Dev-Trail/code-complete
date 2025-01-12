@@ -1,4 +1,9 @@
-방어적 프로그래밍이란? 
+---
+title: 8장 - 방어적 프로그래밍 
+parent: 3. 변수
+nav_order: 2
+writer: frog-slayer
+---
 
 # 8.1. Protecting Your Program from Invalid Inputs
 
