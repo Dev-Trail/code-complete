@@ -5,7 +5,11 @@ nav_order: 2
 writer: frog-slayer
 ---
 
-# 8.1. Protecting Your Program from Invalid Inputs
+# 8. 방어적 프로그래밍
+
+{% include writer.html writer=page.writer %}
+
+## 8.1. Protecting Your Program from Invalid Inputs
 
 "Garbage in, garbage out"이라는 말이 있다. 올바르지 않은 데이터를 입력하면 올바르지 않은 출력이 나온다는 말이다. 하지만 실제 산업에서의 소프트웨어에서 위 말은 충분하지 않다. 좋은 프로그램은 어떤 입력이 들어오든 올바르지 않은 출력은 내보내지 않아야 한다.  
 
@@ -23,7 +27,7 @@ writer: frog-slayer
 가장 좋은 방어적 코딩은 처음부터 에러를 만들지 않는 것이다. 
 + 반복적 설계에서 코드를 작성하기 전에 수도코드, 테스트 케이스를 작성하는 것, 저수준 설계 인스펙션을 수행하는 것 등
 
-# 8.2. Assertions
+## 8.2. Assertions
 **어설션**(assertion)은 개발 중에 쓰이는 코드로, 프로그램이 돌아가면서 스스로를 확인하는 데 쓰이며, 특히 크고 복잡한 프로그램, 신뢰성이 높은 프로그램을 만드는 데 유용하게 쓰인다.
 
 + 참인 경우: 예상대로 제대로 돌아가고 있음
@@ -83,7 +87,7 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 			+ 누적된 복잡성: 갈수록 점점 복잡해짐
 	+ 위와 같은 환경에서는 한가지 오류에 대해 어설션과 에러 핸들링 코드를 조합해 사용하는 것이 더 안정적이다.
 	
-# 8.3. Error-Handling Techniques
+## 8.3. Error-Handling Techniques
 + **중립 값 반환**: 잘못된 데이터에 대한 연산을 수행하고, 안전한 기본값을 반환하는 것이 좋을 때가 있다.
 	+ 치명적인 오류가 아닐 때.
 	+ 예) 값이 없을 때 `0`이나 빈 문자열을 반환
@@ -139,7 +143,7 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 + 자체 작성한 함수뿐만 아니라, 시스템 함수 호출에서도 오류 코드를 확인해야 한다.
 	+ 시스템 콜 에러를 확인하지 않겠다는 가이드라인이 있는 경우가 아니라면, 모든 콜에 대해 에러 코드를 확인해야 한다.
 
-# 8.4. Exceptions
+## 8.4. Exceptions
 **예외**(Exception)는 코드가 자신을 호출한 코드에 에러나 예외적 이벤트를 전달하는 수단이다. 
 
 코드는 처리할 수 없는, 예상하지 못한 조건을 만나면 `throw`문을 통해 예외 객체를 던지고,  이 예외에 대해 더 잘 알고 있는, 상위 호출 계층의 루틴은 `try-catch` 블럭에서 이를 캐치(`catch`)해 예외를 처리한다.
@@ -187,7 +191,7 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 		+ 에러를 로컬에서 처리, 에러코드를 이용해서 에러 전달, 디버그 정보를 파일에 저장, 시스템 종료 등.
 	+ 단순히 언어에서 예외를 제공해주기 때문이 아니라, 정말로 프로그램에 예외 처리가 필요한지를 생각할 것. 
 
-# 8.5. Barricade Your Program to Contain the Damage Caused by Errors
+## 8.5. Barricade Your Program to Contain the Damage Caused by Errors
 배의 격실이나 건물의 방화벽처럼, 소프트웨어에서도 어떤 부분에서 문제가 발생했을 때 다른 부분에는 영향을 미치지 않도록 설계하는 방법이 있다.
 
 소프트웨어에서 바리케이드는 특정 인터페이스를 "안전한" 영역의 경계로 두는 방식으로 구현할 수 있다. 이 경계를 지나는 데이터의 경우 그 유효성을 확인하고, 그렇지 않은 경우 그에 맞게 적절히 대응하는 방식이다.
@@ -210,7 +214,7 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 	+ 데이터가 살균된 후 전달되므로, 데이터가 안전하다고 가정하고 어설션을 사용해 데이터가 기대되는 형식인지 확인할 수 있다.
 	+ 만약 그럼에도 잘못된 데이터를 발견하면, 이는 프로그램 로직에 문제가 있다는 뜻이다.
 
-# 8.6. Debugging Aids
+## 8.6. Debugging Aids
 
 ### Don’t Automatically Apply Production Constraints to the Development Version
 운영 버전의 한계를 개발 버전까지 가져와 혼동하는 경우가 있다.
@@ -291,7 +295,7 @@ DebugCode(
 	+ 이를 통해 개발 중에는 충분한 디버깅을 수행하고, 운영 환경에서는 성능을 최적화할 수 있다.
 	+ 작은 성능 페널티가 있기는 하지만, 자체 전처리기를 만드는 일보다 훨씬 간단하다.
 
-# 8.7.  Determining How Much Defensive Programming to Leave in Production Code
+## 8.7.  Determining How Much Defensive Programming to Leave in Production Code
 개발 중에는 즉시 오류를 인지해 수정할 수 있도록 해야하지만, 운영 중에는 오류가 사용자 경험에 최소한의 영향을 미치도록 처리해야 한다.
 
 + **중요한 에러를 확인하는 코드는 남겨라**
@@ -308,7 +312,7 @@ DebugCode(
 	+ 에러메시지는 사용자에게 친절하고 명확하게 전달되어야 한다.
 	+ 기술적 내용보다는 문제 해결을 위한 방향을 제시하는 것이 좋다.
 
-# 8.8. Being Defensive About Defensive Programming
+## 8.8. Being Defensive About Defensive Programming
 너무 방어적인 프로그래밍에만 집중하면 몇 가지 문제가 발생할 수도 있다.
 
 + 전달되는 모든 데이터를 확인하면, 프로그램이 크고 느려질 것이다.
