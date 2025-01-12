@@ -1,6 +1,6 @@
 ---
 title: 8장 - 방어적 프로그래밍 
-parent: 3. 변수
+parent: 3부. 변수
 nav_order: 2
 writer: frog-slayer
 ---
