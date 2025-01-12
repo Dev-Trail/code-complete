@@ -149,7 +149,8 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 코드는 처리할 수 없는, 예상하지 못한 조건을 만나면 `throw`문을 통해 예외 객체를 던지고,  이 예외에 대해 더 잘 알고 있는, 상위 호출 계층의 루틴은 `try-catch` 블럭에서 이를 캐치(`catch`)해 예외를 처리한다.
 
 + 널리 사용하는 언어들의 예외 구현 비교표
-![[Pasted image 20250112171041.png]]
+<img src="/code-complete/assets/figures/8.tb1.png" width="400px"/>
+
 
 예외는 신중하게 사용하면 복잡도를 줄일 수 있지만, 그렇지 않으면 코드를 따라가는 일을 거의 불가능하게 만들 수도 있다. 아래는 예외 사용의 이점을 살리기 위한 제안들이다.
 
@@ -196,7 +197,8 @@ C++, Java, MS Visual Basic 등의 많은 언어에는 어설션을 지원하는 
 
 소프트웨어에서 바리케이드는 특정 인터페이스를 "안전한" 영역의 경계로 두는 방식으로 구현할 수 있다. 이 경계를 지나는 데이터의 경우 그 유효성을 확인하고, 그렇지 않은 경우 그에 맞게 적절히 대응하는 방식이다.
 
-![[Pasted image 20250112181834.png]]
+<img src="/code-complete/assets/figures/8.2.png" width="400px"/>
+
 
 마찬가지의 방식이 클래스 수준에서도 가능하다.
 + `public` 메서드에서는 데이터가 안전하지 않다고 가정하고, 데이터를 검증 및 살균(sanitize)하는 역할을 한다.
@@ -321,5 +323,6 @@ DebugCode(
 
 따라서 어디에서 방어적 프로그래밍을 적용할지 신중하게 결정하는 게 필요하다. 모든 코드에 대해 방어적인 처리를 하는 것보다는, 중요하고 치명적인 오류가 발생할 수 있는 부분에 대해 집중하는 것이 더 효율적이다.
 
-![[Pasted image 20250112192017.png]]
-![[Pasted image 20250112192032.png]]
+<img src="/code-complete/assets/figures/8.check1.png" width="400px"/>
+<img src="/code-complete/assets/figures/8.check2.png" width="400px"/>
+

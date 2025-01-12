@@ -2,9 +2,12 @@
 title: 4장 - 구현 시 결정해야 할 핵심 사항
 parent: 1부. 기초 확립
 nav_order: 4
+writer: frog-slayer
 ---
 
-# Chapter4. Key Construction Decisions
+# 4장 - 구현 시 결정해야 할 핵심 사항
+
+{% include writer.html writer=page.writer %}
 
 ## 4.1. Choice of Programming Language
 프로그래밍 언어를 선택하는 것도 생산성과 코드 퀄리티에 영향을 준다.
@@ -12,7 +15,7 @@ nav_order: 4
 + 익숙한 언어를 쓰는 것이 생산성 향상에 도움이 된다.
 + 고수준 언어를 쓰는 프로그래머가 저수준 언어를 쓰는 프로그래머보다 높은 생산성, 코드 퀄리티를 보인다.
 	+ 고수준 언어는 저수준 언어보다 표현력이 좋다. 짧은 라인으로 더 많은 작업을 할 수 있다.
-	+ 아래의 표는 C언어 대비, 같은 줄 수의 코드로 얼마나 많이 표현할 수 있는지를 나타낸다.	![[Pasted image 20250101115733.png]](https://github.com/Dev-Trail/code-complete/blob/main/assets/images/Pasted%20image%2020250101115733.png)
+	+ 아래의 표는 C언어 대비, 같은 줄 수의 코드로 얼마나 많이 표현할 수 있는지를 나타낸다.	<img src="/code-complete/assets/figures/4.tb1.png" width="400px"/>
 
 + 어떤 언어는 다른 언어들보다 프로그래밍 개념을 더 잘 표현하기도 한다.
 + 프로그래머도 자신이 쓰는 프로그래밍 언어에 영향을 받곤 한다.
@@ -78,5 +81,5 @@ nav_order: 4
 소프트웨어 구현 준비를 위한 단계에서 할 일 중 하나는, 여러 좋은 실천 규칙들 중 어느 것을 강조할지를 정하는 일이다. 예를 들어 페어 프로그래밍을 할지, 혼자서 개발을 할지, 혹은 이를 조합할지 등을 정하는 것이다. 
 
 아래는 어떤 실천 규칙을 정할 것인지에 도움이 될 체크리스트다. 자세한 실천 규칙은 나중에 다루게 될 것.
-![[Pasted image 20250101165257.png]](https://github.com/Dev-Trail/code-complete/blob/main/assets/images/Pasted%20image%2020250101165257.png)
-![[Pasted image 20250101165311.png]](https://github.com/Dev-Trail/code-complete/blob/main/assets/images/Pasted%20image%2020250101165311.png)
+<img src="/code-complete/assets/figures/4.check1.png" width="400px"/>
+<img src="/code-complete/assets/figures/4.check2.png" width="400px"/>
