@@ -2,9 +2,12 @@
 title: 2장 - 소프트웨어 개발의 이해를 돕기 위한 비유
 parent: 1부. 기초 확립
 nav_order: 2
+writer: frog-slayer
 ---
 
-# Chapter2. Metaphors for a Richer Understanding of Software Development
+# 2장 - 소프트웨어 개발의 이해를 돕기 위한 비유
+
+{% include writer.html writer=page.writer %}
 
 컴퓨터 사이언스에서는 '바이러스', '트로이의 목마', '버그' 등의 다양한 비유를 사용한다. 이 비유들은 구체적인 소프트웨어적 현상을 설명하기 위해 쓰이며, 이러한 비유들을 잘 사용하면 소프트웨어 개발 프로세스를 더욱 잘 이해할 수 있게 된다.
 

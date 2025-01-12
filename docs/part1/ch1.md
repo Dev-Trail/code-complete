@@ -2,9 +2,12 @@
 title: 1장 - 소프트웨어 구현으로의 초대 
 parent: 1부. 기초 확립
 nav_order: 1
+writer: frog-slayer
 ---
 
-# Chapter1. Welcome to Software Construction
+# 1장 - 소프트웨어 구현으로의 초대
+
+{% include writer.html writer=page.writer %}
 
 ## 1.1 What Is Software Construction?
 소프트웨어 개발에서 일어나는 활동들에는 다음과 같은 것들이 있다.
@@ -25,8 +28,7 @@ nav_order: 1
 
 포멀하지 않은 프로젝트들에서 주로 하는 활동은, 정확히 말하자면 **구현**(construction)이다. 아래 그림의 회색 영역이 구현에 속하는 부분이다. 
 
-![construction](https://github.com/Dev-Trail/code-complete/blob/main/assets/images/construction.png)
-
+<img src="/code-complete/assets/figures/1.2.png" width="800px"/>
 
 위 그림에서 볼 수 있듯, 구현에서 가장 많은 부분을 차지하는 건 코딩과 디버깅이지만, 또한 세부 설계, 구현 계획, 단위 테스트, 통합 테스트 및 통합 등의 여러 활동들도 구현에 포함된다.
 
